@@ -1,0 +1,28 @@
+// Variables
+// Primary Color
+$primary: #EB5131;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
+
+// Dark Gray Theme Options
+$gray-900: #121415; // Global background
+$gray-800: #1E2124; // Surfaces, cards
+$gray-700: #2A2D31; // Elevated surfaces, hover states
+$gray-600: #363A3F; // Borders, dividers
+$gray-500: #555A61; // Muted text, icons
+$gray-400: #888D94; // Secondary text
+$gray-300: #B3B5B8; // Text elements
+$gray-200: #E0E2E5; // Light text
+$gray-100: #FAFAFA; // Primary text
+
+// Typography Constants
+$font-family-primary: 'Poppins', sans-serif;
+
+// Breakpoints
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);

@@ -1,0 +1,332 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.projects {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .section-title {
+    font-size: 3rem;
+    color: $gray-100;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+
+    span {
+      color: $primary;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2.25rem;
+    }
+  }
+
+  .section-subtitle {
+    color: $gray-300;
+    font-size: 1.1rem;
+  }
+}
+
+.diagram-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+
+  .diagram-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba($primary, 0.5), $primary, rgba($primary, 0.5), transparent);
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      left: 30px;
+    }
+  }
+}
+
+.diagram-node {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-bottom: 2.5rem;
+  z-index: 2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.left {
+    flex-direction: row;
+  }
+
+  &.right {
+    flex-direction: row-reverse;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column !important;
+  }
+}
+
+.diagram-dot {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: $gray-900;
+  border: 4px solid $primary;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba($primary, 0.8), inset 0 0 5px rgba($primary, 0.5);
+
+  @media (max-width: 768px) {
+    left: 30px;
+  }
+}
+
+.diagram-half {
+  width: 50%;
+  position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  &.opposite-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.15;
+    @include transition-ease;
+    user-select: none;
+
+    .huge-number {
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 2px $primary;
+      margin-bottom: 0.5rem;
+    }
+
+    .opposite-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+
+      span {
+        font-family: monospace;
+        color: $gray-200;
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.diagram-connection-line {
+  position: absolute;
+  top: 50px;
+  width: 40px;
+  height: 2px;
+  background-color: $primary;
+  box-shadow: 0 0 8px rgba($primary, 0.5);
+}
+
+.diagram-node.left .diagram-half.card-half {
+  padding-right: 40px;
+
+  .diagram-connection-line {
+    right: 0;
+  }
+}
+
+.diagram-node.right .diagram-half.card-half {
+  padding-left: 40px;
+
+  .diagram-connection-line {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .diagram-node .diagram-half.card-half {
+    padding-right: 0 !important;
+    padding-left: 50px !important;
+    width: calc(100% - 20px) !important;
+    margin-left: auto;
+
+    .diagram-connection-line {
+      right: auto !important;
+      left: 10px !important;
+    }
+  }
+}
+
+.diagram-card {
+  background: rgba($gray-800, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  @include transition-ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba($gray-600, 0.3), transparent) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($primary, 0.6);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba($primary, 0.15);
+
+    .diagram-image img {
+      transform: scale(1.05);
+      filter: grayscale(0%) contrast(110%);
+    }
+
+    .diagram-image-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.diagram-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba($primary, 0.2);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%) contrast(90%);
+    @include transition-ease(all, 0.6s);
+  }
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($gray-900, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    @include transition-ease;
+
+    .view-btn {
+      padding: 0.6rem 1.2rem;
+      background: rgba($primary, 0.9);
+      color: #fff;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid rgba(#fff, 0.2);
+      transform: translateY(15px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:hover {
+        background: $primary;
+        transform: translateY(0) scale(1.05);
+        box-shadow: 0 5px 15px rgba($primary, 0.4);
+      }
+    }
+  }
+}
+
+.diagram-card:hover .diagram-image-overlay .view-btn {
+  transform: translateY(0);
+}
+
+.diagram-info {
+  padding: 1.5rem;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h3 {
+      font-size: 1.25rem;
+      color: $gray-100;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .status-badge {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+
+      &.done {
+        color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        border: 1px solid rgba(74, 222, 128, 0.2);
+      }
+
+      &.progress {
+        color: $primary;
+        background: rgba($primary, 0.1);
+        border: 1px solid rgba($primary, 0.2);
+      }
+    }
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $gray-300;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.diagram-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  .tech-badge {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba($gray-200, 0.9);
+    background: rgba($gray-900, 0.5);
+    border: 1px dashed rgba($gray-500, 0.5);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: -0.3px;
+  }
+}

@@ -1,9 +1,10 @@
-import './App.scss'
+
+import Portfolio from './pages/Portfolio'
 
 function App() {
 
   return (
-    <h1>Portfolio</h1>
+    <Portfolio />
   )
 }
 

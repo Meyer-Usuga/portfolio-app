@@ -1,0 +1,11 @@
+// Main SCSS file to gather all partials
+@use 'variables';
+@use 'mixins';
+
+@use 'base';
+@use 'typography';
+
+// Components
+@use 'components/navbar';
+@use 'components/about';
+@use 'components/projects';

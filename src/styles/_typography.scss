@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+// Import Poppins Font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: $font-family-primary;
+  color: $gray-100;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-primary;
+  font-weight: 600;
+  color: $gray-100;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+p {
+  color: $gray-300;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary-light;
+  }
+}
