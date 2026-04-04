@@ -13,14 +13,8 @@ export function About() {
 
           <div className="about-description">
             <p>
-              Me esfuerzo constantemente en adquirir nuevos conocimientos y garantizar las mejores prácticas
-              para construir resultados robustos y escalables. Cuento con experiencia en el desarrollo frontend
-              utilizando tecnologías modernas para crear sitios web dinámicos, eficientes y altamente optimizados.
-            </p>
-            <p>
-              Priorizo el respeto mutuo y el buen trato en cualquier aspecto de mi vida. Disfruto trabajar en
-              equipo, ya que lo considero una fuente invaluable para el crecimiento continuo tanto en habilidades
-              técnicas como humanas.
+              Desarrollador frontend enfocado en construir experiencias web dinámicas, escalables y optimizadas.
+              Valoro profundamente el trabajo en equipo, las buenas prácticas y el aprendizaje continuo para aportar valor real en cada proyecto.
             </p>
           </div>
 
@@ -42,6 +36,8 @@ export function About() {
               </div>
             </div>
           </div>
+
+
         </div>
 
         <div className="about-image-wrapper">

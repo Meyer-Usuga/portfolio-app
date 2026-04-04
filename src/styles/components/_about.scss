@@ -146,6 +146,7 @@
     }
   }
 
+
   @at-root {
     @keyframes scroll-carousel {
       0% {
@@ -154,6 +155,18 @@
 
       100% {
         transform: translateX(calc(-50%));
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }

@@ -131,3 +131,117 @@
     }
   }
 }
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  &.active {
+    pointer-events: all;
+
+    .contact-modal-overlay {
+      opacity: 1;
+      backdrop-filter: blur(5px);
+    }
+
+    .contact-modal-content {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  &-content {
+    position: relative;
+    background: rgba($gray-800, 0.95);
+    border: 1px solid rgba($primary, 0.3);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba($primary, 0.1);
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+
+    .modal-title {
+      font-size: 2rem;
+      color: $gray-100;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-subtitle {
+      color: $gray-300;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: $gray-300;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.contact-links-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    color: $gray-100;
+    background: rgba($gray-700, 0.5);
+    border: 1px solid rgba($gray-600, 0.5);
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      
+      &.whatsapp {
+        border-color: #25D366;
+        color: #25D366;
+        background: rgba(37, 211, 102, 0.1);
+      }
+      
+      &.email {
+        border-color: $primary;
+        color: $primary;
+        background: rgba($primary, 0.1);
+      }
+    }
+  }
+}
