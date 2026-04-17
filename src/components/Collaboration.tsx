@@ -1,5 +1,3 @@
-import React from 'react';
-
 const collaborationData = [
   // ... (previous data)
   {
@@ -88,7 +86,7 @@ export function Collaboration() {
 
             <div className="card-body">
               <p className="card-description">{item.description}</p>
-              
+
               <div className="card-services">
                 <div className="services-label">/// TECNOLOGÍAS & SERVICIOS</div>
                 <div className="services-list">
