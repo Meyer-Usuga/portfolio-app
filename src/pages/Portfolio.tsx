@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Projects from "../components/Projects";
+import Collaboration from "../components/Collaboration";
 
 export function Portfolio() {
     return (
@@ -8,6 +9,7 @@ export function Portfolio() {
             <Navbar />
             <About />
             <Projects />
+            <Collaboration />
         </main>
     )
 }

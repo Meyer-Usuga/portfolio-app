@@ -6,6 +6,7 @@ const projectsData = [
     status: 'En curso',
     techs: ['Angular 18', 'TypeScript'],
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774582124/libabu_hwd94g.png',
+    url: 'https://meyer-usuga.github.io/libabu/',
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const projectsData = [
     status: 'Terminado',
     techs: ['Angular 18', 'TypeScript', 'Gemini IA'],
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774581752/web_ecommerce_yodj4n.png',
+    url: 'https://web-ecommerce-tau.vercel.app/',
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const projectsData = [
     status: 'Terminado',
     techs: ['React 18', 'TypeScript', 'SCSS'],
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774581753/saudi_tourism_dnidtx.png',
+    url: 'https://meyer-usuga.github.io/saudi-tourism/',
   }
 ];
 
@@ -40,18 +43,18 @@ export function Projects() {
           return (
             <div key={project.id} className={`diagram-node ${isLeft ? 'left' : 'right'}`}>
               <div className="diagram-dot"></div>
-              
+
               <div className="diagram-half card-half">
                 <div className="diagram-connection-line"></div>
-                
-                <div className="diagram-card">
+
+                <div className="diagram-card" onClick={() => window.open(project.url, '_blank')}>
                   <div className="diagram-image">
                     <img src={project.image} alt={project.title} loading="lazy" />
                     <div className="diagram-image-overlay">
                       <a href="#" className="view-btn">Explorar Código / Demo</a>
                     </div>
                   </div>
-                  
+
                   <div className="diagram-info">
                     <div className="diagram-info-header">
                       <h3>{project.title}</h3>
@@ -59,9 +62,9 @@ export function Projects() {
                         {project.status === 'Terminado' ? '● Terminado' : '◌ En curso'}
                       </span>
                     </div>
-                    
+
                     <p>{project.description}</p>
-                    
+
                     <div className="diagram-techs">
                       {project.techs.map((tech, i) => (
                         <span key={i} className="tech-badge">

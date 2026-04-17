@@ -56,6 +56,7 @@ export function Navbar() {
           <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
             <a href="#sobre-mi" onClick={closeMenu}>Sobre mí</a>
             <a href="#proyectos" onClick={closeMenu}>Proyectos</a>
+            <a href="#colaboracion" onClick={closeMenu}>Servicios</a>
             <a href="#contacto" onClick={openContactModal}>Contacto</a>
           </div>
 
