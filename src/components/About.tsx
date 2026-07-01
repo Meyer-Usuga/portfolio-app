@@ -13,8 +13,7 @@ export function About() {
 
           <div className="about-description">
             <p>
-              Desarrollador frontend enfocado en construir experiencias web dinámicas, escalables y optimizadas.
-              Valoro profundamente el trabajo en equipo, las buenas prácticas y el aprendizaje continuo para aportar valor real en cada proyecto.
+              Desarrollador Full Stack con experiencia en Angular, React, TypeScript, Laravel, Node.js y AWS Serverless. Especializado en interfaces responsivas, integración de APIs REST/GraphQL y desarrollo sobre Shopify. Experiencia en Scrum, trabajo colaborativo y buenas prácticas para construir aplicaciones escalables y mantenibles.
             </p>
           </div>
 

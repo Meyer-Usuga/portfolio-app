@@ -7,6 +7,7 @@ const projectsData = [
     techs: ['Angular 18', 'TypeScript'],
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774582124/libabu_hwd94g.png',
     url: 'https://meyer-usuga.github.io/libabu/',
+    code: "https://github.com/Meyer-Usuga/libabu"
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const projectsData = [
     techs: ['Angular 18', 'TypeScript', 'Gemini IA'],
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774581752/web_ecommerce_yodj4n.png',
     url: 'https://web-ecommerce-tau.vercel.app/',
+    code: "https://github.com/Meyer-Usuga/web-ecommerce"
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const projectsData = [
     techs: ['React 18', 'TypeScript', 'SCSS'],
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774581753/saudi_tourism_dnidtx.png',
     url: 'https://meyer-usuga.github.io/saudi-tourism/',
+    code: "https://github.com/Meyer-Usuga/saudi-tourism"
   }
 ];
 
@@ -47,11 +50,12 @@ export function Projects() {
               <div className="diagram-half card-half">
                 <div className="diagram-connection-line"></div>
 
-                <div className="diagram-card" onClick={() => window.open(project.url, '_blank')}>
+                <div className="diagram-card">
                   <div className="diagram-image">
                     <img src={project.image} alt={project.title} loading="lazy" />
                     <div className="diagram-image-overlay">
-                      <a href="#" className="view-btn">Explorar Código / Demo</a>
+                      <a href={project.code} className="view-btn" target="_blank">Explorar Código</a>
+                      <a href={project.url} className="view-btn" target="_blank">Explorar Demo</a>
                     </div>
                   </div>
 
