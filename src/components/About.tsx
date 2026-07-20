@@ -1,11 +1,10 @@
-import perfilImg from '../assets/perfil.png';
 
 export function About() {
   return (
     <section className="profile-section">
       <div className="profile-header">
         <div className="profile-image-container">
-          <img src={perfilImg} alt="Meyer Restrepo" className="profile-image" />
+          <img src="https://res.cloudinary.com/db1tp6eqg/image/upload/v1784513223/perfil_gmkath.png" alt="Meyer Restrepo" className="profile-image" />
           <span className="status-indicator"></span>
         </div>
         <div className="profile-info">
