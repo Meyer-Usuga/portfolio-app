@@ -1,15 +1,17 @@
 import Navbar from "../components/Navbar";
 import About from "../components/About";
+import TechStack from "../components/TechStack";
 import Projects from "../components/Projects";
-import Collaboration from "../components/Collaboration";
 
 export function Portfolio() {
     return (
-        <main>
+        <main className="portfolio-container">
             <Navbar />
-            <About />
-            <Projects />
-            <Collaboration />
+            <div className="portfolio-content">
+                <About />
+                <TechStack />
+                <Projects />
+            </div>
         </main>
     )
 }

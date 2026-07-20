@@ -6,7 +6,8 @@
 @use 'typography';
 
 // Components
-@use 'components/navbar';
-@use 'components/about';
-@use 'components/projects';
-@use 'components/collaboration';
+@use './components/layout.scss';
+@use './components/navbar.scss';
+@use './components/about.scss';
+@use './components/techstack.scss';
+@use './components/projects.scss';

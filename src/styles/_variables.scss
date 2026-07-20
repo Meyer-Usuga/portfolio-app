@@ -1,22 +1,52 @@
-// Variables
-// Primary Color
-$primary: #EB5131;
-$primary-light: lighten($primary, 10%);
-$primary-dark: darken($primary, 10%);
+// CSS Custom Properties definitions
+:root {
+  --bg-color: #ffffff;
+  --gray-900: #111827; // Primary text
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563; // Secondary text
+  --gray-500: #6b7280; // Muted text, icons
+  --gray-400: #9ca3af;
+  --gray-300: #d1d5db; // Borders
+  --gray-200: #e5e7eb; // Dividers
+  --gray-100: #f9fafb; // Subtle background (cards)
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
 
-// Dark Gray Theme Options
-$gray-900: #121415; // Global background
-$gray-800: #1E2124; // Surfaces, cards
-$gray-700: #2A2D31; // Elevated surfaces, hover states
-$gray-600: #363A3F; // Borders, dividers
-$gray-500: #555A61; // Muted text, icons
-$gray-400: #888D94; // Secondary text
-$gray-300: #B3B5B8; // Text elements
-$gray-200: #E0E2E5; // Light text
-$gray-100: #FAFAFA; // Primary text
+body.dark-theme {
+  --bg-color: #1a1e23; // Not totally dark
+  --gray-900: #f9fafb; // Inverse primary text
+  --gray-800: #f3f4f6;
+  --gray-700: #e5e7eb;
+  --gray-600: #9ca3af; // Inverse secondary text
+  --gray-500: #6b7280;
+  --gray-400: #4b5563;
+  --gray-300: #374151; // Darker borders
+  --gray-200: #2a2f36; // Darker dividers
+  --gray-100: #22272e; // Darker card backgrounds
+  --nav-bg: rgba(26, 30, 35, 0.95);
+}
+
+// Variables mapped to Custom Properties
+$bg-color: var(--bg-color);
+$gray-900: var(--gray-900);
+$gray-800: var(--gray-800);
+$gray-700: var(--gray-700);
+$gray-600: var(--gray-600);
+$gray-500: var(--gray-500);
+$gray-400: var(--gray-400);
+$gray-300: var(--gray-300);
+$gray-200: var(--gray-200);
+$gray-100: var(--gray-100);
+$nav-bg: var(--nav-bg);
+
+// Primary Color
+$primary: var(--gray-900);
+$primary-light: var(--gray-700);
+$primary-dark: var(--gray-900);
 
 // Typography Constants
-$font-family-primary: 'Poppins', sans-serif;
+$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
 // Breakpoints
 $breakpoints: (
@@ -25,4 +55,4 @@ $breakpoints: (
   'lg': 992px,
   'xl': 1200px,
   'xxl': 1400px
-);
+);
