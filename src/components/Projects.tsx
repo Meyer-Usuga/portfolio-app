@@ -1,17 +1,24 @@
 const projectsData = [
   {
-    id: 1,
-    title: 'Libabu',
-    description: 'Una plataforma estática interactiva concebida como una red social dedicada a los amantes de los libros. Interacciones y colección de obras literarias.',
-    image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774582124/libabu_hwd94g.png',
-    url: 'https://meyer-usuga.github.io/libabu/',
+    id: 0,
+    title: 'Mi Natillera',
+    description: 'Landing page para una aplicación mobile. Enfocada en la comunidad colombiana para fomentar el ahorro de forma interactiva.',
+    image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1784663202/webminatillera_pcobcb.png',
+    url: 'https://mi-natillera-app.web.app/',
   },
   {
-    id: 2,
+    id: 1,
     title: 'Web Ecommerce',
     description: 'Plataforma de comercio electrónico moderna y escalable. Cuenta con integración de Gemini IA para la optimización y generación inteligente de imágenes.',
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774581752/web_ecommerce_yodj4n.png',
     url: 'https://web-ecommerce-tau.vercel.app/',
+  },
+  {
+    id: 2,
+    title: 'Libabu',
+    description: 'Una plataforma estática interactiva concebida como una red social dedicada a los amantes de los libros. Interacciones y colección de obras literarias.',
+    image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774582124/libabu_hwd94g.png',
+    url: 'https://meyer-usuga.github.io/libabu/',
   },
   {
     id: 3,
@@ -19,7 +26,7 @@ const projectsData = [
     description: 'Una experiencia visual inmersiva para promover el turismo en Arabia Saudita. Diseño de alta fidelidad con animaciones nativas y maquetación avanzada.',
     image: 'https://res.cloudinary.com/db1tp6eqg/image/upload/v1774581753/saudi_tourism_dnidtx.png',
     url: 'https://meyer-usuga.github.io/saudi-tourism/',
-  }
+  },
 ];
 
 export function Projects() {
