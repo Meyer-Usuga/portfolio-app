@@ -4,7 +4,7 @@ export function About() {
     <section className="profile-section">
       <div className="profile-header">
         <div className="profile-image-container">
-          <img src="https://res.cloudinary.com/db1tp6eqg/image/upload/v1784513223/perfil_gmkath.png" alt="Meyer Restrepo" className="profile-image" />
+          <img src="https://res.cloudinary.com/db1tp6eqg/image/upload/v1792121303/file_00000000325082308900d84509725481_2_rmni6n.png" alt="Meyer Restrepo" className="profile-image" />
           <span className="status-indicator"></span>
         </div>
         <div className="profile-info">

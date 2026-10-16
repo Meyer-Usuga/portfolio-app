@@ -14,7 +14,7 @@ const techs = [
 export function TechStack() {
   return (
     <section className="tech-stack-section">
-      <h3 className="section-title">Current tech stack</h3>
+      <h3 className="section-title">Tecnologías actuales</h3>
       <div className="tech-grid">
         {techs.map((tech, index) => (
           <div key={index} className="tech-item">
