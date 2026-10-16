@@ -49,7 +49,10 @@ export function Projects() {
             </div>
             <div className="project-info">
               <h4 className="project-title">{project.title}</h4>
-              <p className="project-description">{project.description}</p>
+              <div className="project-description-wrapper" tabIndex={0}>
+                <p className="project-description">{project.description}</p>
+                <p className="project-description-full" aria-hidden="true">{project.description}</p>
+              </div>
               <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-project">
                 Ir al sitio
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
