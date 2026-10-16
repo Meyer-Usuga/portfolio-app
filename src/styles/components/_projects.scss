@@ -98,13 +98,15 @@
 }
 
 .project-description-full {
+  --tooltip-shift: 6px;
+
   position: absolute;
-  top: -0.5rem;
-  left: -0.75rem;
-  right: -0.75rem;
+  top: 50%;
+  left: calc(100% + 0.9rem);
   z-index: 10;
+  width: 260px;
   margin: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 0.9rem;
   font-size: 0.85rem;
   line-height: 1.5;
   color: $gray-800;
@@ -114,19 +116,76 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(4px);
+  pointer-events: none;
+  transform: translate(calc(var(--tooltip-shift) * -1), -50%);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+
+  // Flecha apuntando a la descripción
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: $bg-color;
+    border-left: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-300;
+    transform: translateY(-50%) rotate(45deg);
+  }
 
   .project-description-wrapper:hover &,
   .project-description-wrapper:focus-visible & {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate(0, -50%);
+  }
+
+  // Cards de la columna derecha: el tooltip sale hacia la izquierda
+  .project-card:nth-child(2n) & {
+    left: auto;
+    right: calc(100% + 0.9rem);
+    transform: translate(var(--tooltip-shift), -50%);
+
+    &::before {
+      left: auto;
+      right: -6px;
+      transform: translateY(-50%) rotate(-135deg);
+    }
+  }
+
+  .project-card:nth-child(2n) .project-description-wrapper:hover &,
+  .project-card:nth-child(2n) .project-description-wrapper:focus-visible & {
+    transform: translate(0, -50%);
   }
 }
 
 @media (max-width: 576px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  // En una sola columna no hay espacio a los lados: el tooltip sale debajo
+  .project-description-full,
+  .project-card:nth-child(2n) .project-description-full {
+    top: calc(100% + 0.75rem);
+    left: 0;
+    right: 0;
+    width: auto;
+    transform: translateY(calc(var(--tooltip-shift) * -1));
+
+    &::before {
+      top: -6px;
+      left: 1.25rem;
+      right: auto;
+      transform: rotate(135deg);
+    }
+  }
+
+  .project-description-wrapper:hover .project-description-full,
+  .project-description-wrapper:focus-visible .project-description-full,
+  .project-card:nth-child(2n) .project-description-wrapper:hover .project-description-full,
+  .project-card:nth-child(2n) .project-description-wrapper:focus-visible .project-description-full {
+    transform: translateY(0);
   }
 }
